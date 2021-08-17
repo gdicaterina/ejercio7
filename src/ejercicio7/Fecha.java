@@ -56,6 +56,8 @@ public class Fecha {
     
     @Override
     public String toString(){
-        return this.Anio + " " + this.Mes + " " + this.Dia ;
+        return this.Anio + "/" + this.Mes + "/" + this.Dia ;
     }
+    
+    
 }

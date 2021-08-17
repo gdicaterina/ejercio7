@@ -15,7 +15,7 @@ public class Seleccion {
     
     private String Pais;
     private ArrayList<Jugador> jugadores;
-    
+        
     public Seleccion(String Pais){
         this.Pais = Pais;
         jugadores = new ArrayList();
@@ -27,17 +27,20 @@ public class Seleccion {
     }
     
     public String MostrarJugador(int posicion){
-        String Jugador = "\t" + jugadores.get(posicion).getApellido() + "\t" + jugadores.get(posicion).getCamiseta()
-                + "\t\t" + jugadores.get(posicion).getNacimiento() + "\t" + jugadores.get(posicion).MostrarJugadorPosicion(jugadores.get(posicion).getCamiseta()) + "\n";
+        
+        String Jugador = "SubVeinte : " + jugadores.get(posicion).subVeinte() + "Apellido : " + jugadores.get(posicion).getApellido() + "\n" + "Camiseta : " + jugadores.get(posicion).getCamiseta()
+                + "\n" + "Nacimiento : " + jugadores.get(posicion).getNacimiento() + "\n" + "Posicion : " + jugadores.get(posicion).MostrarJugadorPosicion(posicion) + "\n";
+        
+        Jugador += "----------------------------------------------------------------------\n";
         
         return Jugador;
     }
     
-    public boolean PerteneceJugador(Jugador jugador){
+    public boolean PerteneceJugador(String Apellido){
         boolean existeJugador = false;
         
         for(int i = 0; i < jugadores.size(); i++){
-            if(jugador.getApellido().equals(jugadores.get(i).getApellido())){
+            if(Apellido.equals(jugadores.get(i).getApellido())){
                 return existeJugador = true;
             }
         }
@@ -52,6 +55,19 @@ public class Seleccion {
             JugadoresLista += this.MostrarJugador(i);
         }
         return JugadoresLista;
+    }
+    
+    public int ObtenerPosicion(String Apellido) {
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (Apellido.equals(jugadores.get(i).getApellido())) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public Jugador Devolver(int pos){
+        return jugadores.get(pos);
     }
     
 }

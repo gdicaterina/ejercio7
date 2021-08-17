@@ -6,7 +6,6 @@
 package ejercicio7;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.Period;
 
 
@@ -97,16 +96,15 @@ public class Jugador {
         return posicion;
     }
     
-    public boolean subVeinte(Fecha Nacimiento){
+    public boolean subVeinte(){
                 
         Fecha fecha = new Fecha();        
-        this.Nacimiento = Nacimiento;
-        
+                
         boolean jugadorMenorDeVeinte = false;
-        LocalDate localDateJugador = LocalDate.of(fecha.getAnio(), fecha.getMes(), fecha.getDia());
+        LocalDate localDateJugador = LocalDate.of(fecha.getAnio(), fecha.getMes(), fecha.getDia());        
         LocalDate localDateNow = LocalDate.now();
         Period Edad = Period.between(localDateJugador, localDateNow);
-        System.out.println(Edad.getYears()+Edad.getMonths()+Edad.getDays());
+        //System.out.println(Edad.getYears()+Edad.getMonths()+Edad.getDays());        
         
         if(Edad.getYears() <= 20) {
             jugadorMenorDeVeinte = true;
@@ -117,7 +115,7 @@ public class Jugador {
     }
     
     public String MostrarJugadorPosicion(int Camisa){
-        String MosstrarJugadorPosicion = Jugador.this.getCamiseta() + Jugador.this.posicion(Camiseta) ;
+        String MosstrarJugadorPosicion = Jugador.this.posicion(Camiseta) ;
         
         return MosstrarJugadorPosicion;
     }   
