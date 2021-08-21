@@ -20,6 +20,10 @@ public class Seleccion {
         this.Pais = Pais;
         jugadores = new ArrayList();
     }
+
+    public Seleccion() {
+        
+    }
     
     public void InsertarJugador(String Apellido, int Camiseta, Fecha Nacimiento){
         Jugador jugador = new Jugador(Apellido, Camiseta, Nacimiento);
@@ -28,8 +32,12 @@ public class Seleccion {
     
     public String MostrarJugador(int posicion){
         
-        String Jugador = "SubVeinte : " + jugadores.get(posicion).subVeinte() + "Apellido : " + jugadores.get(posicion).getApellido() + "\n" + "Camiseta : " + jugadores.get(posicion).getCamiseta()
+        /*String Jugador = "SubVeinte : " + jugadores.get(posicion).subVeinte() + "Apellido : " + jugadores.get(posicion).getApellido() + "\n" + "Camiseta : " + jugadores.get(posicion).getCamiseta()
                 + "\n" + "Nacimiento : " + jugadores.get(posicion).getNacimiento() + "\n" + "Posicion : " + jugadores.get(posicion).MostrarJugadorPosicion(posicion) + "\n";
+        */
+        String Jugador = "Apellido : " + jugadores.get(posicion).getApellido() + "\n" + "Camiseta : " + jugadores.get(posicion).getCamiseta()
+                + "\n" + "Nacimiento : " + jugadores.get(posicion).getNacimiento() + "\n" + "Posicion : " + jugadores.get(posicion).MostrarJugadorPosicion(posicion) + "\n";
+        
         
         Jugador += "----------------------------------------------------------------------\n";
         
